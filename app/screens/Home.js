@@ -1,12 +1,13 @@
 import React from 'react'
-import { StatusBar, View } from 'react-native'
+import { StatusBar } from 'react-native'
 
 import { Container } from '../components/Container'
+import { Logo } from '../components/Logo'
 
 // StatusBar prop translucent is for android, barStyle for ios.
 export default () => (
   <Container>
     <StatusBar translucent={false} barStyle="light-content" />
-    <View />
+    <Logo />
   </Container>
 )
