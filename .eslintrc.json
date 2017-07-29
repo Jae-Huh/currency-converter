@@ -21,6 +21,7 @@
         ]
       }
     ],
+    "max-len": ["error", { "ignoreComments": true }],
     "react/forbid-prop-types": [
       0
     ],

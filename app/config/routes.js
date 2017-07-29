@@ -16,7 +16,7 @@ export default StackNavigator({
     screen: CurrencyList,
     navigationOptions: ({ navigation }) => ({
       headerTitle: navigation.state.params.title, // This is how to access the title on top as specified in './screens/Home' handlePressBaseCurrency and handlePressQuoteCurrency functions
-    })
+    }),
   },
 }, {
   mode: 'modal',
