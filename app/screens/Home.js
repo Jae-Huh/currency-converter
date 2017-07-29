@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { StatusBar, KeyboardAvoidingView } from 'react-native' // KeyboardAvoidingView is used to bump up the components when keyboard appears so they're not hidden behind the keyboard. Wrap everything we care or want not to be hidden with this component.
 
 import { Container } from '../components/Container'
@@ -17,12 +18,17 @@ const TEMP_CONVERSION_DATE = new Date()
 
 // StatusBar prop translucent is for android, barStyle for ios.
 class Home extends Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+  }
+
   handlePressBaseCurrency = () => {
-    console.log('press base')
+    // Now the screens are rendered by StackNavigator (from 'react-navigation) in './config/routes.js'. and it gives the components new prop 'navigation'
+    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency' }) // 'CurrencyList' string must align with the key that's specified in './config/routes'
   }
 
   handlePressQuoteCurrency = () => {
-    console.log('press quote')
+    this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' })
   }
 
   handleTextChange = (text) => {

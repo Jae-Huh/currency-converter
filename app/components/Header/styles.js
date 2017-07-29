@@ -11,9 +11,6 @@ const styles = EStyleSheet.create({
     '@media ios': {
       paddingTop: 20, // All ios devices' status bars are 20 pixels high
     },
-    '@media android': {
-      paddingTop: StatusBar.currentHeight, // This line is only for android. Doesn't work for ios devices
-    },
   },
   button: {
     alignSelf: 'flex-end',
