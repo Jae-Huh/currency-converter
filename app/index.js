@@ -2,6 +2,7 @@ import React from 'react'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
 import Navigator from './config/routes'
+import { AlertProvider } from './components/Alert'
 
 EStyleSheet.build({
   $primaryBlue: '#4F6D7A',
@@ -17,4 +18,4 @@ EStyleSheet.build({
   // to show outline of each element on mobile device for development: use 'outline: 1'
 })
 
-export default () => <Navigator />
+export default () => <AlertProvider><Navigator /></AlertProvider>
