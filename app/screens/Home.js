@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StatusBar, KeyboardAvoidingView } from 'react-native' // KeyboardAvoidingView is used to bump up the components when keyboard appears so they're not hidden behind the keyboard. Wrap everything we care or want not to be hidden with this component.
+import { connect } from 'react-redux'
 
 import { Container } from '../components/Container'
 import { Logo } from '../components/Logo'
@@ -22,6 +23,7 @@ const TEMP_CONVERSION_DATE = new Date()
 class Home extends Component {
   static propTypes = {
     navigation: PropTypes.object,
+    dispatch: PropTypes.func,
   }
 
   handlePressBaseCurrency = () => {
@@ -34,13 +36,11 @@ class Home extends Component {
   }
 
   handleTextChange = (amount) => {
-    // TODO: Make this actually work with this.props.dispatch
-    console.log(changeCurrencyAmount(amount))
+    this.props.dispatch(changeCurrencyAmount(amount))
   }
 
   handleSwapCurrency = () => {
-    // TODO: Make this actually work with this.props.dispatch
-    console.log(swapCurrency())
+    this.props.dispatch(swapCurrency())
   }
 
   handleOptionsPress = () => {
@@ -85,4 +85,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default connect()(Home)
