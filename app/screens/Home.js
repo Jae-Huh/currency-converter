@@ -27,11 +27,11 @@ class Home extends Component {
 
   handlePressBaseCurrency = () => {
     // Now the screens are rendered by StackNavigator (from 'react-navigation) in './config/routes.js'. and it gives the components new prop 'navigation'
-    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency' }) // 'CurrencyList' string must align with the key that's specified in './config/routes'
+    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency', type: 'base' }) // 'CurrencyList' string must align with the key that's specified in './config/routes'
   }
 
   handlePressQuoteCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' })
+    this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency', type: 'quote' })
   }
 
   handleTextChange = (amount) => {
