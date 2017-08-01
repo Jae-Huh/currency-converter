@@ -5,7 +5,7 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 import { connect } from 'react-redux'
 
 import { ListItem, Separator } from '../components/List'
-import { changePrimaryColor } from "../actions/theme"
+import { changePrimaryColor } from '../actions/theme'
 
 const styles = EStyleSheet.create({
   $blue: '$primaryBlue',
