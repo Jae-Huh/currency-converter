@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import { ListItem, Separator } from '../components/List'
 import currencies from '../data/currencies'
-import { changeBaseCurrency, changeQuoteCurrency } from "../actions/currencies"
+import { changeBaseCurrency, changeQuoteCurrency } from '../actions/currencies'
 
 class CurrencyList extends Component {
   static propTypes = {
@@ -13,6 +13,7 @@ class CurrencyList extends Component {
     dispatch: PropTypes.func,
     baseCurrency: PropTypes.string,
     quoteCurrency: PropTypes.string,
+    primaryColor: PropTypes.string,
   }
 
   handlePress = (currency) => {
@@ -41,6 +42,7 @@ class CurrencyList extends Component {
               text={item}
               selected={item === comparisonCurrency}
               onPress={() => this.handlePress(item)}
+              iconBackground={this.props.primaryColor}
             />
           )}
           keyExtractor={item => item}
@@ -55,6 +57,7 @@ const mapStateToProps = (state) => {
   return {
     baseCurrency: state.currencies.baseCurrency,
     quoteCurrency: state.currencies.quoteCurrency,
+    primaryColor: state.theme.primaryColor,
   }
 }
 
